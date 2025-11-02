@@ -7,15 +7,16 @@ import logRoutes from "./routes/logs.js";
 dotenv.config();
 
 const app = express();
+import cors from "cors";
+
+// Allow all origins (for now)
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://dainty-sprite-f49ce2.netlify.app", // ✅ your actual Netlify site
-    ],
-    methods: ["GET", "POST", "DELETE"],
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
   })
 );
+
 
 app.use(express.json());
 
