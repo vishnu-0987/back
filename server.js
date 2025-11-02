@@ -7,7 +7,16 @@ import logRoutes from "./routes/logs.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://dainty-sprite-f49ce2.netlify.app", // ✅ your actual Netlify site
+    ],
+    methods: ["GET", "POST", "DELETE"],
+  })
+);
+
 app.use(express.json());
 
 // MongoDB Connection
