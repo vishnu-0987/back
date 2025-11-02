@@ -7,7 +7,6 @@ import logRoutes from "./routes/logs.js";
 dotenv.config();
 
 const app = express();
-import cors from "cors";
 
 // Allow all origins (for now)
 app.use(
